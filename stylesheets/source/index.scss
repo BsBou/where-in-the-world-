@@ -1,1 +1,19 @@
 // run  sass stylesheets/source/index.scss stylesheets/build/index.css to process Sass
+
+
+//Colors
+$white: #F8F9FA;
+$light-grey: #E9ECEF;
+html{
+  font-size: 16px;
+}
+#header{
+  height: 6rem;
+  background-color: $light-grey;
+
+  i{
+    font-weight: 400;
+    font-size: 2.5em;
+    padding-right: 0.25em;
+  }
+}
