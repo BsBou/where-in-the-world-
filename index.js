@@ -25,3 +25,16 @@ fetch("https://restcountries.com/v3.1/all")
       countries.insertAdjacentHTML("beforeend", countryCard)
     })
   })
+
+const form = document.querySelector('#search-box')
+form.addEventListener('submit', event => {
+  event.preventDefault()
+  const input = document.getElementById('search').value
+  fetch(`https://restcountries.com/v3.1/name/${input}`)
+    .then(response => response.json())
+    .then((data) => {
+      if(data.status === 404){
+        alert("That country doesn't exist! Please try again")
+      }
+    })
+})
