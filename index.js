@@ -58,12 +58,16 @@ form.addEventListener('input', event => {
   const value = event.target.value
   // Filter countries by name, case insensitive
   const selection = countryList.filter(country => country.name.toLowerCase().includes(value.toLowerCase()))
-
   // Clear all countries from page
   countries.innerHTML = ''
 
   // Insert only filtered countries on page
-  selection.forEach((country) => {
-    countries.insertAdjacentHTML("beforeend", createCountryCard(country))
-  })
+  if(selection.length > 0){
+    selection.forEach((country) => {
+      countries.insertAdjacentHTML("beforeend", createCountryCard(country))
+    })
+  } else {
+    // Error message if country doesn't exist
+    countries.insertAdjacentHTML("beforeend", '<div> <p id="wrong-name">No country by that name!</p></div>')
+  }
 })
