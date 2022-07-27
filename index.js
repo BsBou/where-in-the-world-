@@ -1,13 +1,13 @@
 // Create country card HTML function
 function createCountryCard(obj) {
-  return `<div class="col-3">
-            <div class="country-card my-2">
+  return `<div class="col-lg-3">
+            <div class="country-card m-4">
               <img id="flag" src="${obj.flag}" alt="">
               <div class="country-card-body">
                 <h2 id="name">${obj.name}</h2>
                 <h4>Population: <span id="population">${obj.population}</span></h4>
                 <h4>Capital: <span id="capital">${obj.capital}</span></h4>
-                <h4>Continent: <span id="continent">${obj.continent}</span></h4>
+                <h4>Region: <span id="continent">${obj.continent}</span></h4>
               </div>
             </div>
           </div>`
@@ -36,7 +36,9 @@ const listAllCountries = () => {
           continent: country.continents[0],
         }
       })
+      // Sort countries by name
       countryList = Object.values(countryList).sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
+
       countryList.forEach((country) => {
         // Insert populated HTML to main page
         countries.insertAdjacentHTML("beforeend", createCountryCard(country))

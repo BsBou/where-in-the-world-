@@ -12,9 +12,15 @@ html {
   padding-right: 0.25em;
 }
 
+#header-title {
+  font-size: 1.6rem;
+}
+
 .country-card {
   background-color: #E9ECEF;
   border-radius: 4px;
+  overflow: hidden;
+  border: 0.5px solid #E9ECEF;
 }
 .country-card img {
   width: 100%;
@@ -22,19 +28,20 @@ html {
 }
 
 .country-card-body {
-  height: 6rem;
+  height: 9rem;
   padding-left: 0.5rem;
   border-radius: 25px;
 }
 .country-card-body #name {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 .country-card-body h4 {
-  font-size: 0.5rem;
+  font-size: 1rem;
 }
 
 #wrong-name {
   font-weight: 600;
+  font-size: 1.5rem;
 }
 
 /*# sourceMappingURL=index.css.map */
