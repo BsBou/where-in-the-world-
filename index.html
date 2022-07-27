@@ -25,15 +25,28 @@
     </div>
     <div id="input">
       <div class="container">
-        <div class="row">
-          <form action="submit" id="search-box">
+        <div class="row  py-4">
             <div class="col-4">
-              <div class="input-group py-4">
-                <button class="btn btn-outline-secondary" type="button" id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+              <div class="input-group">
                 <input id="search" type="text" class="form-control" placeholder="Search for a country..." aria-label="Example text with button addon" aria-describedby="button-addon1">
+              </div>
             </div>
+            <div class="col-4">
+
             </div>
-          </form>
+            <div class="col-4">
+              <select id='select-region' class="form-select" aria-label="Default select example">
+                <!-- <option selected></option> -->
+                <option value="" disabled selected>Filter by region</option>
+                <option value="Africa">Africa</option>
+                <option value="North America">North America</option>
+                <option value="South America">South America</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+
+              </select>
+            </div>
         </div>
       </div>
     </div>

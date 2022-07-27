@@ -48,26 +48,41 @@ window.onload = (event) => {
   listAllCountries()
 };
 
+
+
+// Filter countries by name
+
 // Select search form
-const form = document.querySelector('#search-box')
-
-// Search countries by name
+const form = document.querySelector('#search')
 form.addEventListener('input', event => {
-
+  event.preventDefault()
   // Get user input
   const value = event.target.value
   // Filter countries by name, case insensitive
-  const selection = countryList.filter(country => country.name.toLowerCase().includes(value.toLowerCase()))
+  const userSearch = countryList.filter(country => country.name.toLowerCase().includes(value.toLowerCase()))
   // Clear all countries from page
   countries.innerHTML = ''
 
   // Insert only filtered countries on page
-  if(selection.length > 0){
-    selection.forEach((country) => {
+  if(userSearch.length > 0){
+    userSearch.forEach((country) => {
       countries.insertAdjacentHTML("beforeend", createCountryCard(country))
     })
   } else {
     // Error message if country doesn't exist
     countries.insertAdjacentHTML("beforeend", '<div> <p id="wrong-name">No country by that name!</p></div>')
   }
+})
+
+// Filter countries by region
+
+// Get user selected
+const selectRegion = document.querySelector('#select-region')
+selectRegion.addEventListener('change', (event) => {
+  const value = event.target.value;
+  const userSelection = countryList.filter(country => country.continent === value)
+  countries.innerHTML = ''
+  userSelection.forEach((country) =>
+  countries.insertAdjacentHTML("beforeend", createCountryCard(country))
+  )
 })
