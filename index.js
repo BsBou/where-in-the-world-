@@ -36,6 +36,7 @@ const listAllCountries = () => {
           continent: country.continents[0],
         }
       })
+      countryList = Object.values(countryList).sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
       countryList.forEach((country) => {
         // Insert populated HTML to main page
         countries.insertAdjacentHTML("beforeend", createCountryCard(country))
