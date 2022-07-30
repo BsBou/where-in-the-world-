@@ -9,16 +9,18 @@
   <script src="https://kit.fontawesome.com/4099c4e985.js" crossorigin="anonymous"></script>
   <title>Where in the world?</title>
 </head>
-  <body>
+  <body class="theme--light">
     <div id="header" class="d-flex align-items-center">
       <div class="container-fluid">
         <div class="row d-flex align-items-center">
           <div class="col-10">
             <h3 id="header title">Where in the world?</h3>
           </div>
-          <div class="col-2 d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-moon"></i>
-            <h3>Dark mode</h3>
+          <div id="theme-selector" class="col-2 d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-moon"></i>
+            <h3 id="theme--dark-text">Dark mode</h3>
+            <h3 id="theme--light-text" class="d-none">Light mode</h3>
+
           </div>
         </div>
       </div>
@@ -36,6 +38,7 @@
               <select id='select-region' class="form-select" aria-label="Default select example">
                 <!-- <option selected></option> -->
                 <option value="" disabled selected>Filter by region</option>
+                <option value="All">View all countries</option>
                 <option value="Africa">Africa</option>
                 <option value="North America">North America</option>
                 <option value="South America">South America</option>

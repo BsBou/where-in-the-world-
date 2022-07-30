@@ -1,10 +1,13 @@
+* {
+  transition: background-color 0.2s;
+}
+
 html {
   font-size: 16px;
 }
 
 #header {
   height: 6rem;
-  background-color: #E9ECEF;
 }
 #header i {
   font-weight: 400;
@@ -17,10 +20,8 @@ html {
 }
 
 .country-card {
-  background-color: #E9ECEF;
   border-radius: 4px;
   overflow: hidden;
-  border: 0.5px solid #E9ECEF;
 }
 .country-card img {
   width: 100%;
@@ -39,9 +40,50 @@ html {
   font-size: 1rem;
 }
 
+#theme-selector:hover {
+  cursor: pointer;
+}
+
 #wrong-name {
   font-weight: 600;
   font-size: 1.5rem;
+}
+
+.theme--light #header {
+  background-color: #E9ECEF;
+}
+.theme--light .country-card {
+  background-color: #E9ECEF;
+  border: 0.5px solid #E9ECEF;
+}
+
+.theme--dark {
+  background-color: #2B3743;
+}
+.theme--dark #header {
+  background-color: #212E37;
+  color: #F8F9FA;
+}
+.theme--dark #header i {
+  font-weight: 600;
+}
+.theme--dark #search {
+  background-color: #212E37;
+}
+.theme--dark #search ::placeholder {
+  color: #F8F9FA;
+}
+.theme--dark #select-region {
+  background-color: #212E37;
+  color: #F8F9FA;
+}
+.theme--dark .country-card {
+  background-color: #2B3743;
+  color: #F8F9FA;
+  border: 0.5px solid black;
+}
+.theme--dark .country-card img {
+  filter: grayscale(40%);
 }
 
 /*# sourceMappingURL=index.css.map */

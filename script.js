@@ -5,7 +5,7 @@ function createCountryCard(obj) {
               <img id="flag" src="${obj.flag}" alt="">
               <div class="country-card-body">
                 <h2 id="name">${obj.name}</h2>
-                <h4>Population: <span id="population">${obj.population}</span></h4>
+                <h4>Population: <span id="population">${obj.population.toLocaleString('en-US')}</span></h4>
                 <h4>Capital: <span id="capital">${obj.capital}</span></h4>
                 <h4>Region: <span id="continent">${obj.continent}</span></h4>
               </div>
@@ -74,7 +74,7 @@ form.addEventListener('input', event => {
   } else {
     // Error message if country doesn't exist
     countries.insertAdjacentHTML("beforeend", '<div> <p id="wrong-name">No country by that name!</p></div>')
-  }
+    }
 })
 
 // Filter countries by region
@@ -83,9 +83,32 @@ form.addEventListener('input', event => {
 const selectRegion = document.querySelector('#select-region')
 selectRegion.addEventListener('change', (event) => {
   const value = event.target.value;
-  const userSelection = countryList.filter(country => country.continent === value)
-  countries.innerHTML = ''
-  userSelection.forEach((country) =>
-  countries.insertAdjacentHTML("beforeend", createCountryCard(country))
-  )
+  if (value === 'All'){
+    countries.innerHTML = ''
+    listAllCountries()
+  } else {
+      const userSelection = countryList.filter(country => country.continent === value)
+      countries.innerHTML = ''
+      userSelection.forEach((country) =>
+      countries.insertAdjacentHTML("beforeend", createCountryCard(country))
+      )
+    }
+})
+
+// Dark mode theme toggler
+const themeSelector = document.getElementById('theme-selector')
+
+// On click, toggle dark theme and change theme selector text
+themeSelector.addEventListener('click', (event) => {
+
+  const light = document.querySelectorAll('.theme--light')
+  const darkThemeText = document.getElementById('theme--dark-text')
+  const lightThemeText = document.getElementById('theme--light-text')
+
+  light.forEach((el) => {
+    el.classList.toggle('theme--dark')
+    darkThemeText.classList.toggle('d-none')
+    lightThemeText.classList.toggle('d-none')
+
+  })
 })

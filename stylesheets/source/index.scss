@@ -1,15 +1,19 @@
-// run  sass stylesheets/source/index.scss stylesheets/build/index.css to process Sass
-
-
+// run  sass stylesheets/source/index.scss stylesheets/build/index.css
 //Colors
 $white: #F8F9FA;
 $light-grey: #E9ECEF;
+
+$dark-navy: #212E37;
+$light-navy: #2B3743;
+
+* {
+  transition: background-color 0.2s ;
+}
 html{
   font-size: 16px;
 }
 #header{
   height: 6rem;
-  background-color: $light-grey;
   i{
     font-weight: 400;
     font-size: 2.5em;
@@ -20,11 +24,11 @@ html{
   font-size: 1.6rem;
 }
 
+
+
 .country-card{
-  background-color: $light-grey;
   border-radius: 4px;
   overflow: hidden;
-  border: 0.5px solid $light-grey;
   img{
     width: 100%;
     height: 10rem;
@@ -42,7 +46,54 @@ html{
   }
 }
 
+#theme-selector:hover{
+  cursor: pointer;
+}
+
 #wrong-name{
   font-weight: 600;
   font-size: 1.5rem;
+}
+
+// Themes
+ // Light theme --default
+.theme--light{
+  #header{
+    background-color: $light-grey;
+  }
+  .country-card{
+    background-color: $light-grey;
+    border: 0.5px solid $light-grey;
+
+  }
+}
+  // Dark theme
+.theme--dark{
+    background-color: $light-navy;
+  #header{
+    background-color: $dark-navy;
+    color: $white;
+    i{
+      font-weight: 600;
+    }
+  }
+  #search{
+    background-color: $dark-navy;
+    ::placeholder{
+      color: $white;
+    }
+  }
+  #select-region{
+    background-color: $dark-navy;
+    color: $white;
+  }
+  .country-card{
+    background-color: $light-navy;
+    color: $white;
+    border: 0.5px solid black;
+
+    img{
+      filter: grayscale(40%);
+    }
+  }
 }
