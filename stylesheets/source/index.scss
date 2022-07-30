@@ -70,6 +70,7 @@ html{
   // Dark theme
 .theme--dark{
     background-color: $light-navy;
+    color: $white;
   #header{
     background-color: $dark-navy;
     color: $white;
@@ -79,6 +80,7 @@ html{
   }
   #search{
     background-color: $dark-navy;
+    color: $white;
     ::placeholder{
       color: $white;
     }

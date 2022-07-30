@@ -59,6 +59,7 @@ html {
 
 .theme--dark {
   background-color: #2B3743;
+  color: #F8F9FA;
 }
 .theme--dark #header {
   background-color: #212E37;
@@ -69,6 +70,7 @@ html {
 }
 .theme--dark #search {
   background-color: #212E37;
+  color: #F8F9FA;
 }
 .theme--dark #search ::placeholder {
   color: #F8F9FA;
