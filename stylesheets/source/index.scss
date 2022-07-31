@@ -16,12 +16,13 @@ html{
   height: 6rem;
   i{
     font-weight: 400;
-    font-size: 2.5em;
+    font-size: 1.5rem;
     padding-right: 0.25em;
   }
 }
 #header-title{
   font-size: 1.6rem;
+  padding-left: 1rem;
 }
 
 
@@ -61,10 +62,12 @@ html{
   #header{
     background-color: $light-grey;
   }
+  #theme--dark-text {
+    font-size: 1rem;
+  }
   .country-card{
     background-color: $light-grey;
     border: 0.5px solid $light-grey;
-
   }
 }
   // Dark theme
@@ -77,6 +80,9 @@ html{
     i{
       font-weight: 600;
     }
+  }
+  #theme--light-text {
+    font-size: 1rem;
   }
   #search{
     background-color: $dark-navy;
