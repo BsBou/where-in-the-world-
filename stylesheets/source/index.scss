@@ -26,14 +26,26 @@ html{
 }
 
 
-
+a{
+  all: unset;
+}
+a:hover{
+  cursor: pointer;
+  color: black;
+}
 .country-card{
   border-radius: 4px;
   overflow: hidden;
+  box-shadow: 0;
+  transition: box-shadow 0.1s ease-in-out;
+  border: 1px solid #eee;
   img{
     width: 100%;
     height: 10rem;
   }
+}
+.country-card:hover{
+  box-shadow: 0 0 3px #515151
 }
 .country-card-body{
   height: 9rem;

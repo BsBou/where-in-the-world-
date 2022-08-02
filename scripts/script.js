@@ -1,8 +1,27 @@
+// Dark mode theme toggler
+const themeSelector = document.getElementById('theme-selector')
+
+// On click, toggle dark theme and change theme selector text
+themeSelector.addEventListener('click', (event) => {
+
+  const light = document.querySelectorAll('.theme--light')
+  const darkThemeText = document.getElementById('theme--dark-text')
+  const lightThemeText = document.getElementById('theme--light-text')
+
+  light.forEach((el) => {
+    el.classList.toggle('theme--dark')
+    darkThemeText.classList.toggle('d-none')
+    lightThemeText.classList.toggle('d-none')
+
+  })
+})
+
+
 // Create country card HTML function
 function createCountryCard(obj) {
   return `<div class="col-lg-3">
-            <a id='link' href='country.html'>
-              <div class="country-card m-4">
+            <div class="country-card m-4">
+              <a id='link' >
                 <img id="flag" src="${obj.flag}" alt="">
                 <div class="country-card-body">
                   <h2 id="name">${obj.name}</h2>
@@ -10,8 +29,8 @@ function createCountryCard(obj) {
                   <h4>Capital: <span id="capital">${obj.capital}</span></h4>
                   <h4>Region: <span id="continent">${obj.continent}</span></h4>
                 </div>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>`
 }
 
@@ -48,12 +67,11 @@ const listAllCountries = () => {
     })
 
 }
+
 // Show all countries upon page load
 window.onload = (event) => {
   listAllCountries()
 };
-
-
 
 // Filter countries by name
 
@@ -97,20 +115,20 @@ selectRegion.addEventListener('change', (event) => {
     }
 })
 
-// Dark mode theme toggler
-const themeSelector = document.getElementById('theme-selector')
+// Delay card selection by 1s until DOM is populated
+setTimeout(() => {
+  // Select all country cards
+  const linkCountry = document.querySelectorAll('a')
 
-// On click, toggle dark theme and change theme selector text
-themeSelector.addEventListener('click', (event) => {
+  // Iterate through all countries
+  linkCountry.forEach(element => {
+    element.addEventListener('click', (event) => {
 
-  const light = document.querySelectorAll('.theme--light')
-  const darkThemeText = document.getElementById('theme--dark-text')
-  const lightThemeText = document.getElementById('theme--light-text')
+      // Upon clicking a country get country name
+      const countryName = event.currentTarget.querySelector('#name').innerHTML
 
-  light.forEach((el) => {
-    el.classList.toggle('theme--dark')
-    darkThemeText.classList.toggle('d-none')
-    lightThemeText.classList.toggle('d-none')
-
-  })
-})
+      // Update card href with country name as URL params
+      event.currentTarget.href = `country.html?${countryName}`
+    })
+  });
+}, 1000);
