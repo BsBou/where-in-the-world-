@@ -20,64 +20,50 @@ themeSelector.addEventListener('click', (event) => {
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString)
-const countryName = urlParams.get('country')
-
+const countryName = urlParams.get('country').toString()
 const headTitle = document.getElementById('head-title')
 headTitle.innerText = countryName
 
+// const newcountry = countryName.replace(/^%20/, '')
+// console.log(newcountry)
+// const aruba = '%20Aruba'
+// const nearuba = aruba.replace(/^%20/, '')
+
+fetch(`https://restcountries.com/v3.1/name/${countryName}`)
+.then(response => response.json())
+.then((data) => {
+
+  // Fetch country data and assign to variable
+  const country = Object.values(data)[0]
+  console.log(country)
+  // console.log(country.idd)
+  // console.log(callingCode)
+  // Set flag
+  document.getElementById('country-flag').src = country.flags.png
+
+  // Set country header
+  document.getElementById('country-name').innerText = country.name.common
+
+  // Set country official name, capital and population
+  document.getElementById('country-official-name').innerText = country.name.official
+  document.getElementById('country-capital').innerText = country.capital
+  document.getElementById('country-population').innerText = country.population.toLocaleString('en-US')
+
+  // Set country languages to be first three
+  const threeLanguages = Object.values(country.languages).slice(0,3)
+  document.getElementById('country-languages').innerText = threeLanguages.join(', ')
+
+  // Set country currency, web domain
+  document.getElementById('country-currency').innerText = Object.values(country.currencies)[0].name
+  document.getElementById('country-web-domain').innerText = country.tld[0]
+
+  // Set country calling code
+  const callingCode = country.idd.root + country.idd.suffixes[0]
+  document.getElementById('country-calling-code').innerText = callingCode
+
+  // Set FIFA code
+  document.getElementById('country-fifa').innerText = country.fifa
 
 
-//     function createCountryCard(obj) {
-//       return `<div class="col-lg-3">
-//                 <div class="country-card m-4">
-//                   <a id='link' >
-//                     <img id="flag" src="${obj.flags.png}" alt="">
-//                     <div class="country-card-body">
-//                       <h2 id="name">${obj.name.common}</h2>
-//                       <h4>Population: <span id="population">${obj.population.toLocaleString('en-US')}</span></h4>
-//                       <h4>Capital: <span id="capital">${obj.capital}</span></h4>
-//                       <h4>Region: <span id="continent">${obj.continents[0]}</span></h4>
-//                     </div>
-//                   </a>
-//                 </div>
-//               </div>`
-//     }
 
-
-// //     createCountryCard(countryList)
-
-// // Select row to insert country cards
-// const countries = document.getElementById("countries")
-
-// // Create global array of countries
-// // let countryList = []
-
-// // Method to show all countries
-// // const listAllCountries = () => {
-//   // Fetch all countries
-//   fetch(`https://restcountries.com/v3.1/name/${countryName}`)
-//     .then(response => response.json())
-//     .then((data) => {
-//       // console.log(data)
-//       // Create custom objects, add to countryList array
-//       //  foo = Object.values(data).map(country => {
-//       //   return {
-//       //     flag: country.flags.png,
-//       //     name: country.name.common,
-//       //     population: country.population,
-//       //     capital: country.capital,
-//       //     continent: country.continents[0],
-//       //   }
-//       // })
-//       console.log(data[0])
-
-//       // // Sort countries by name
-//       // countryList = Object.values(countryList).sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
-
-//       // countryList.forEach((country) => {
-//       //   // Insert populated HTML to main page
-//         countries.insertAdjacentHTML("beforeend", createCountryCard(data[0]))
-//       // })
-//     })
-
-// // }
+})

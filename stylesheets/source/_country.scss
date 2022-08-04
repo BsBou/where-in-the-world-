@@ -1,0 +1,51 @@
+//Colors
+$white: #F8F9FA;
+$light-grey: #E9ECEF;
+
+$dark-navy: #212E37;
+$light-navy: #2B3743;
+
+//Media breakpoints
+$sm: 576px;
+
+#back-button{
+  background-color: $light-grey;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  i{
+    font-size: 2rem;
+  }
+}
+#country-flag-container{
+
+  @media (max-width:$sm) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+#country-flag{
+  width: 100%;
+  border: 0.5px solid black;
+
+}
+#country-name{
+  @media (max-width:$sm) {
+    text-align: center;
+  }
+}
+
+#country-info{
+  display: flex;
+  @media (max-width:$sm) {
+    display: block;
+  }
+}
+
+.border{
+  background-color: $light-grey;
+  border-radius: 8px;
+  padding: 0.5rem 1rem
+}

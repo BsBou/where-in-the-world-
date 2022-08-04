@@ -128,7 +128,7 @@ setTimeout(() => {
       const countryName = event.currentTarget.querySelector('#name').innerHTML
 
       // Update card href with country name as URL params
-      event.currentTarget.href = `country.html?country= ${countryName}`
+      event.currentTarget.href = `country.html?country=${countryName}`
     })
   });
 }, 1000);
