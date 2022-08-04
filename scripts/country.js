@@ -12,22 +12,15 @@ themeSelector.addEventListener('click', (event) => {
     el.classList.toggle('theme--dark')
     darkThemeText.classList.toggle('d-none')
     lightThemeText.classList.toggle('d-none')
-
   })
 })
 
 // Set page title to country name
-
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString)
-const countryName = urlParams.get('country').toString()
+const countryName = urlParams.get('country')
 const headTitle = document.getElementById('head-title')
 headTitle.innerText = countryName
-
-// const newcountry = countryName.replace(/^%20/, '')
-// console.log(newcountry)
-// const aruba = '%20Aruba'
-// const nearuba = aruba.replace(/^%20/, '')
 
 fetch(`https://restcountries.com/v3.1/name/${countryName}`)
 .then(response => response.json())
@@ -35,9 +28,7 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}`)
 
   // Fetch country data and assign to variable
   const country = Object.values(data)[0]
-  console.log(country)
-  // console.log(country.idd)
-  // console.log(callingCode)
+
   // Set flag
   document.getElementById('country-flag').src = country.flags.png
 
@@ -64,6 +55,19 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}`)
   // Set FIFA code
   document.getElementById('country-fifa').innerText = country.fifa
 
+  // Select country-borders div
+  const countryBorders = document.getElementById('country-borders')
 
-
+  // Get first 4 border country codes of country and begin iteration
+  const fourBorders = country.borders.slice(0,4)
+  fourBorders.forEach(border =>
+  // API call passing country codes, generates new html, populated with country name as text and country page as href
+    fetch(`https://restcountries.com/v3.1/alpha/${border}`)
+    .then(response => response.json())
+    .then((data) => {
+      const borderCountryName = Object.values(data)[0].name.common
+      const borderHTML = `<a href='country.html?country=${borderCountryName}' class="border" id="border">${borderCountryName}</a>`
+      countryBorders.insertAdjacentHTML("beforeend", borderHTML)
+    })
+  )
 })
