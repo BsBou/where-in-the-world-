@@ -66,7 +66,7 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}`)
     .then(response => response.json())
     .then((data) => {
       const borderCountryName = Object.values(data)[0].name.common
-      const borderHTML = `<a href='country.html?country=${borderCountryName}' class="border" id="border">${borderCountryName}</a>`
+      const borderHTML = `<li><a href='country.html?country=${borderCountryName}' class="border" id="border">${borderCountryName}</a></li>`
       countryBorders.insertAdjacentHTML("beforeend", borderHTML)
     })
   )

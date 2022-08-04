@@ -159,4 +159,19 @@ a:hover {
   padding: 0.5rem 1rem;
 }
 
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+  list-style-position: outside;
+}
+
+li {
+  padding: 0.1rem 0rem;
+}
+
+#country-borders li {
+  padding: 1rem 0rem;
+  font-size: 1.5rem;
+}
+
 /*# sourceMappingURL=application.css.map */

@@ -34,6 +34,24 @@ function createCountryCard(obj) {
           </div>`
 }
 
+// Create function to visit country page on click
+function clickableCountries() {
+  // Select all country cards
+  const linkCountry = document.querySelectorAll('a')
+
+  // Iterate through all countries
+  linkCountry.forEach(element => {
+    element.addEventListener('click', (event) => {
+
+      // Upon clicking a country get country name
+      const countryName = event.currentTarget.querySelector('#name').innerHTML
+
+      // Update card href with country name as URL params
+      event.currentTarget.href = `country.html?country=${countryName}`
+    })
+  });
+}
+
 // Select row to insert country cards
 const countries = document.getElementById("countries")
 
@@ -68,67 +86,54 @@ const listAllCountries = () => {
 
 }
 
+// Filter countries by name
+  // Select search form
+  const form = document.querySelector('#search')
+  form.addEventListener('input', event => {
+    event.preventDefault()
+    // Get user input
+    const value = event.target.value
+    // Filter countries by name, case insensitive
+    const userSearch = countryList.filter(country => country.name.toLowerCase().includes(value.toLowerCase()))
+    // Clear all countries from page
+    countries.innerHTML = ''
+
+    // Insert only filtered countries on page
+    if(userSearch.length > 0){
+      userSearch.forEach((country) => {
+        countries.insertAdjacentHTML("beforeend", createCountryCard(country))
+        clickableCountries()
+      })
+    } else {
+      // Error message if country doesn't exist
+      countries.insertAdjacentHTML("beforeend", '<div> <p id="wrong-name">No country by that name!</p></div>')
+      }
+  })
+
+// Filter countries by region
+  // Get user selected
+  const selectRegion = document.querySelector('#select-region')
+  selectRegion.addEventListener('change', (event) => {
+    const value = event.target.value;
+    if (value === 'All'){
+      countries.innerHTML = ''
+      listAllCountries()
+    } else {
+        const userSelection = countryList.filter(country => country.continent === value)
+        countries.innerHTML = ''
+        userSelection.forEach((country) =>
+        countries.insertAdjacentHTML("beforeend", createCountryCard(country))
+        )
+      }
+    clickableCountries()
+  })
+
 // Show all countries upon page load
 window.onload = (event) => {
   listAllCountries()
+  setTimeout(() => {
+      clickableCountries()
+  }, 1000);
 };
 
-// Filter countries by name
-
-// Select search form
-const form = document.querySelector('#search')
-form.addEventListener('input', event => {
-  event.preventDefault()
-  // Get user input
-  const value = event.target.value
-  // Filter countries by name, case insensitive
-  const userSearch = countryList.filter(country => country.name.toLowerCase().includes(value.toLowerCase()))
-  // Clear all countries from page
-  countries.innerHTML = ''
-
-  // Insert only filtered countries on page
-  if(userSearch.length > 0){
-    userSearch.forEach((country) => {
-      countries.insertAdjacentHTML("beforeend", createCountryCard(country))
-    })
-  } else {
-    // Error message if country doesn't exist
-    countries.insertAdjacentHTML("beforeend", '<div> <p id="wrong-name">No country by that name!</p></div>')
-    }
-})
-
-// Filter countries by region
-
-// Get user selected
-const selectRegion = document.querySelector('#select-region')
-selectRegion.addEventListener('change', (event) => {
-  const value = event.target.value;
-  if (value === 'All'){
-    countries.innerHTML = ''
-    listAllCountries()
-  } else {
-      const userSelection = countryList.filter(country => country.continent === value)
-      countries.innerHTML = ''
-      userSelection.forEach((country) =>
-      countries.insertAdjacentHTML("beforeend", createCountryCard(country))
-      )
-    }
-})
-
 // Delay card selection by 1s until DOM is populated
-setTimeout(() => {
-  // Select all country cards
-  const linkCountry = document.querySelectorAll('a')
-
-  // Iterate through all countries
-  linkCountry.forEach(element => {
-    element.addEventListener('click', (event) => {
-
-      // Upon clicking a country get country name
-      const countryName = event.currentTarget.querySelector('#name').innerHTML
-
-      // Update card href with country name as URL params
-      event.currentTarget.href = `country.html?country=${countryName}`
-    })
-  });
-}, 1000);

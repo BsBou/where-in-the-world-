@@ -19,6 +19,7 @@ $sm: 576px;
     font-size: 2rem;
   }
 }
+
 #country-flag-container{
 
   @media (max-width:$sm) {
@@ -29,8 +30,8 @@ $sm: 576px;
 #country-flag{
   width: 100%;
   border: 0.5px solid black;
-
 }
+
 #country-name{
   @media (max-width:$sm) {
     text-align: center;
@@ -48,4 +49,18 @@ $sm: 576px;
   background-color: $light-grey;
   border-radius: 8px;
   padding: 0.5rem 1rem
+}
+ul{
+  list-style-type: none;
+  padding-left: 0px;
+  list-style-position: outside;
+}
+li{
+  padding: 0.1rem 0rem;
+}
+#country-borders{
+  li{
+    padding: 1rem 0rem;
+    font-size: 1.5rem;
+  }
 }
