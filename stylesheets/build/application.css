@@ -113,6 +113,9 @@ a:hover {
 .theme--dark #back-button {
   background-color: #212E37;
 }
+.theme--dark #border {
+  background-color: #212E37;
+}
 
 #back-button {
   background-color: #E9ECEF;

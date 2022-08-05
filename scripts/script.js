@@ -12,16 +12,19 @@ themeSelector.addEventListener('click', (event) => {
     el.classList.toggle('theme--dark')
     darkThemeText.classList.toggle('d-none')
     lightThemeText.classList.toggle('d-none')
-
   })
 })
 
+// Select row to insert country cards
+const countries = document.getElementById("countries")
+// Create global array of countries
+let countryList = []
 
 // Create country card HTML function
 function createCountryCard(obj) {
   return `<div class="col-lg-3">
             <div class="country-card m-4">
-              <a id='link' >
+              <a id='link' href='country.html?country=${obj.name}'>
                 <img id="flag" src="${obj.flag}" alt="">
                 <div class="country-card-body">
                   <h2 id="name">${obj.name}</h2>
@@ -34,32 +37,8 @@ function createCountryCard(obj) {
           </div>`
 }
 
-// Create function to visit country page on click
-function clickableCountries() {
-  // Select all country cards
-  const linkCountry = document.querySelectorAll('a')
-
-  // Iterate through all countries
-  linkCountry.forEach(element => {
-    element.addEventListener('click', (event) => {
-
-      // Upon clicking a country get country name
-      const countryName = event.currentTarget.querySelector('#name').innerHTML
-
-      // Update card href with country name as URL params
-      event.currentTarget.href = `country.html?country=${countryName}`
-    })
-  });
-}
-
-// Select row to insert country cards
-const countries = document.getElementById("countries")
-
-// Create global array of countries
-let countryList = []
-
 // Method to show all countries
-const listAllCountries = () => {
+function listAllCountries() {
   // Fetch all countries
   fetch("https://restcountries.com/v3.1/all")
     .then(response => response.json())
@@ -77,17 +56,19 @@ const listAllCountries = () => {
       })
       // Sort countries by name
       countryList = Object.values(countryList).sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
-
       countryList.forEach((country) => {
         // Insert populated HTML to main page
         countries.insertAdjacentHTML("beforeend", createCountryCard(country))
       })
     })
-
 }
 
+// Show all countries upon page load
+window.onload = (event) => {
+  listAllCountries()
+};
+
 // Filter countries by name
-  // Select search form
   const form = document.querySelector('#search')
   form.addEventListener('input', event => {
     event.preventDefault()
@@ -102,7 +83,6 @@ const listAllCountries = () => {
     if(userSearch.length > 0){
       userSearch.forEach((country) => {
         countries.insertAdjacentHTML("beforeend", createCountryCard(country))
-        clickableCountries()
       })
     } else {
       // Error message if country doesn't exist
@@ -111,29 +91,20 @@ const listAllCountries = () => {
   })
 
 // Filter countries by region
-  // Get user selected
+  // User choose region
   const selectRegion = document.querySelector('#select-region')
   selectRegion.addEventListener('change', (event) => {
     const value = event.target.value;
+    // Insert all countries if user chooses 'View all'
     if (value === 'All'){
       countries.innerHTML = ''
       listAllCountries()
     } else {
+      // Insert selected region
         const userSelection = countryList.filter(country => country.continent === value)
         countries.innerHTML = ''
         userSelection.forEach((country) =>
         countries.insertAdjacentHTML("beforeend", createCountryCard(country))
         )
       }
-    clickableCountries()
   })
-
-// Show all countries upon page load
-window.onload = (event) => {
-  listAllCountries()
-  setTimeout(() => {
-      clickableCountries()
-  }, 1000);
-};
-
-// Delay card selection by 1s until DOM is populated

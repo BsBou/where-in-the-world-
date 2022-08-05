@@ -111,12 +111,14 @@ a:hover{
     background-color: $light-navy;
     color: $white;
     border: 0.5px solid black;
-
   }
   img{
     filter: grayscale(40%);
   }
   #back-button{
+    background-color: $dark-navy;
+  }
+  #border{
     background-color: $dark-navy;
   }
 }
