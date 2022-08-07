@@ -72,8 +72,8 @@ window.onload = (event) => {
   const form = document.querySelector('#search')
   form.addEventListener('input', event => {
     event.preventDefault()
-    // Get user input
-    const value = event.target.value
+    // Get user input, remove trailing whitespace except in country names with more than one word
+    const value = event.target.value.replace(/\B\s+|\s+\B/, '')
     // Filter countries by name, case insensitive
     const userSearch = countryList.filter(country => country.name.toLowerCase().includes(value.toLowerCase()))
     // Clear all countries from page

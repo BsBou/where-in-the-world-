@@ -22,6 +22,7 @@ const countryName = urlParams.get('country')
 const headTitle = document.getElementById('head-title')
 headTitle.innerText = countryName
 
+// Populate page with country data from API call
 fetch(`https://restcountries.com/v3.1/name/${countryName}`)
 .then(response => response.json())
 .then((data) => {
@@ -41,16 +42,22 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}`)
   document.getElementById('country-population').innerText = country.population.toLocaleString('en-US')
 
   // Set country languages to be first three
-  const threeLanguages = Object.values(country.languages).slice(0,3)
-  document.getElementById('country-languages').innerText = threeLanguages.join(', ')
+  if(country.languages != undefined)
+    {
+    const threeLanguages = Object.values(country.languages).slice(0,3)
+    document.getElementById('country-languages').innerText = threeLanguages.join(', ')
+  }
 
   // Set country currency, web domain
-  document.getElementById('country-currency').innerText = Object.values(country.currencies)[0].name
-  document.getElementById('country-web-domain').innerText = country.tld[0]
+  if(country.currencies != undefined){
+    document.getElementById('country-currency').innerText = Object.values(country.currencies)[0].name
+    document.getElementById('country-web-domain').innerText = country.tld[0]
+  }
 
   // Set country calling code
-  const callingCode = country.idd.root + country.idd.suffixes[0]
-  document.getElementById('country-calling-code').innerText = callingCode
+
+    const callingCode = country.idd.root + country.idd.suffixes[0]
+    document.getElementById('country-calling-code').innerText = callingCode
 
   // Set FIFA code
   document.getElementById('country-fifa').innerText = country.fifa
@@ -59,6 +66,9 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}`)
   const countryBorders = document.getElementById('country-borders')
 
   // Get first 4 border country codes of country and begin iteration
+  console.log(country.borders)
+  if (country.borders != undefined ) {
+
   const fourBorders = country.borders.slice(0,4)
   fourBorders.forEach(border =>
   // API call passing country codes, generates new html, populated with country name as text and country page as href
@@ -70,4 +80,10 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}`)
       countryBorders.insertAdjacentHTML("beforeend", borderHTML)
     })
   )
+  } else {
+
+    countryBorders.insertAdjacentHTML("beforeend", '<li> This country has no borders!</li>')
+
+  }
+
 })
