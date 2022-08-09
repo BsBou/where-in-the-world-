@@ -172,6 +172,7 @@ a:hover {
   background-color: #E9ECEF;
   border-radius: 8px;
   padding: 0.5rem 1rem;
+  margin: 0.5rem;
 }
 
 ul {
@@ -187,6 +188,38 @@ li {
 #country-borders li {
   padding: 1rem 0rem;
   font-size: 1.5rem;
+}
+
+#country-official-name {
+  font-weight: 400;
+}
+
+#country-capital {
+  font-weight: 400;
+}
+
+#country-population {
+  font-weight: 400;
+}
+
+#country-languages {
+  font-weight: 400;
+}
+
+#country-currency {
+  font-weight: 400;
+}
+
+#country-web-domain {
+  font-weight: 400;
+}
+
+#country-calling-code {
+  font-weight: 400;
+}
+
+#country-fifa {
+  font-weight: 400;
 }
 
 #error-body {
