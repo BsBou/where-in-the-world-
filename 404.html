@@ -10,33 +10,46 @@
   <title>Not Found!</title>
 </head>
   <body class="theme--light">
-  <div id="header" class="d-flex align-items-center">
-    <div class="container-fluid">
-      <div class="row d-flex align-items-center">
-        <div class="col-9">
-          <a href="index.html">
-            <h3 id="header-title">Where in the world?</h3>
+    <section>
+      <div id="header" class="d-flex align-items-center">
+      <div class="container-fluid">
+        <div class="row d-flex align-items-center">
+          <div class="col-9">
+            <a href="index.html">
+              <h3 id="header-title">Where in the world?</h3>
+            </a>
+          </div>
+          <div id="theme-selector" class="col-3 d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-moon"></i>
+            <h3 id="theme--dark-text">Dark mode</h3>
+            <h3 id="theme--light-text" class="d-none">Light mode</h3>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="container">
+      <div class="row">
+        <div class="col text-center" id="error-body">
+          <h1 class="e404">404</h1>
+          <h1 id="oops">Lost your way?</h1>
+          <a id="error-back-button" href="index.html" class="m-3">
+            <i class="fa-solid fa-arrow-left"></i>
+            Take me back!
           </a>
         </div>
-        <div id="theme-selector" class="col-3 d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-moon"></i>
-          <h3 id="theme--dark-text">Dark mode</h3>
-          <h3 id="theme--light-text" class="d-none">Light mode</h3>
+      </div>
+      </div>
+    </section>
+    <div class="footer" >
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <p id="my-name">By Borhan Boulandier</p>
+          <div>
+            <a href="https://github.com/BsBou" id="social"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/borhanbou/" id="social"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col text-center" id="error-body">
-        <h1 class="e404">404</h1>
-        <h1 id="oops">Lost your way?</h1>
-        <a id="error-back-button" href="index.html" class="m-3">
-          <i class="fa-solid fa-arrow-left"></i>
-          Take me back!
-        </a>
-      </div>
-    </div>
-  </div>
 </body>
 </html>

@@ -10,51 +10,64 @@
   <title>Where in the world?</title>
 </head>
   <body class="theme--light">
-    <div id="header" class="d-flex align-items-center">
-      <div class="container-fluid">
-        <div class="row d-flex align-items-center">
-          <div class="col-9">
-            <a href="index.html">
-              <h3 id="header-title">Where in the world?</h3>
-            </a>
+    <section>
+      <div id="header" class="d-flex align-items-center">
+        <div class="container-fluid">
+          <div class="row d-flex align-items-center">
+            <div class="col-9">
+              <a href="index.html">
+                <h3 id="header-title">Where in the world?</h3>
+              </a>
+              </div>
+            <div id="theme-selector" class="col-3 d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-moon"></i>
+              <h3 id="theme--dark-text">Dark mode</h3>
+              <h3 id="theme--light-text" class="d-none">Light mode</h3>
             </div>
-          <div id="theme-selector" class="col-3 d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-moon"></i>
-            <h3 id="theme--dark-text">Dark mode</h3>
-            <h3 id="theme--light-text" class="d-none">Light mode</h3>
+          </div>
+        </div>
+      </div>
+      <div id="input">
+        <div class="container">
+          <div class="row">
+              <div class="col-lg-4 py-4 col-6">
+                <div class="input-group">
+                  <input id="search" type="text" class="form-control" placeholder="Search for a country..." aria-label="Example text with button addon" aria-describedby="button-addon1">
+                </div>
+              </div>
+              <div class="col-lg-4 col"></div>
+              <div class="col-lg-4 col-5 py-4">
+                <select id='select-region' class="form-select" aria-label="Default select example">
+                  <option value="" disabled selected>Filter by region</option>
+                  <option value="All">View all countries</option>
+                  <option value="Africa">Africa</option>
+                  <option value="North America">North America</option>
+                  <option value="South America">South America</option>
+                  <option value="Asia">Asia</option>
+                  <option value="Europe">Europe</option>
+                  <option value="Oceania">Oceania</option>
+                </select>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row" id="countries">
+          <!-- JS Script inserts HTML here -->
+        </div>
+      </div>
+      <script src="/scripts/script.js"></script>
+    </section>
+    <div class="footer" >
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <p id="my-name">By Borhan Boulandier</p>
+          <div>
+            <a href="https://github.com/BsBou" id="social"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/borhanbou/" id="social"><i class="fa-brands fa-linkedin"></i></a>
           </div>
         </div>
       </div>
     </div>
-    <div id="input">
-      <div class="container">
-        <div class="row">
-            <div class="col-lg-4 py-4 col-6">
-              <div class="input-group">
-                <input id="search" type="text" class="form-control" placeholder="Search for a country..." aria-label="Example text with button addon" aria-describedby="button-addon1">
-              </div>
-            </div>
-            <div class="col-lg-4 col"></div>
-            <div class="col-lg-4 col-5 py-4">
-              <select id='select-region' class="form-select" aria-label="Default select example">
-                <option value="" disabled selected>Filter by region</option>
-                <option value="All">View all countries</option>
-                <option value="Africa">Africa</option>
-                <option value="North America">North America</option>
-                <option value="South America">South America</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
-              </select>
-            </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row" id="countries">
-        <!-- JS Script inserts HTML here -->
-      </div>
-    </div>
-    <script src="/scripts/script.js"></script>
   </body>
 </html>

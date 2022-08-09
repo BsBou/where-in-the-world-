@@ -10,68 +10,81 @@
   <title id="head-title"></title>
 </head>
   <body class="theme--light">
-  <div id="header" class="d-flex align-items-center">
-    <div class="container-fluid">
-      <div class="row d-flex align-items-center">
-        <div class="col-9">
-          <a href="index.html">
-            <h3 id="header-title">Where in the world?</h3>
-          </a>
-        </div>
-        <div id="theme-selector" class="col-3 d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-moon"></i>
-          <h3 id="theme--dark-text">Dark mode</h3>
-          <h3 id="theme--light-text" class="d-none">Light mode</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-2 col-6 py-4">
-        <a id="back-button" href="index.html" class="p-1">
-            <i class="fa-solid fa-arrow-left"></i>
-            Back
-          </a>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-5 col-9 mb-4" id="country-flag-container">
-        <img id="country-flag" src="" alt="">
-      </div>
-      <div class="col-lg-7">
-        <div id="country-info" >
-          <div class="col-lg-8 col">
-            <h2 id="country-name" class="mb-4"></h2>
-            <ul>
-              <li><h4>Official name: <span id="country-official-name"></span></h4></li>
-              <li><h4>Capital: <span id="country-capital"></span></h4></li>
-              <li><h4>Population: <span id="country-population"></span></h4></li>
-              <li><h4>Languages: <span id="country-languages"></span></h4></li>
-              <li><h4>Currency: <span id="country-currency"></span></h4></li>
-              <li><h4>Web domain: <span id="country-web-domain"></span></h4></li>
-              <li><h4>Calling code: <span id="country-calling-code"></span></h4></li>
-              <li><h4>FIFA country code: <span id="country-fifa"></span></h4></li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <h2>Borders</h2>
-            <div >
-              <ul id="country-borders">
-              </ul>
+    <section>
+      <div id="header" class="d-flex align-items-center">
+        <div class="container-fluid">
+          <div class="row d-flex align-items-center">
+            <div class="col-9">
+              <a href="index.html">
+                <h3 id="header-title">Where in the world?</h3>
+              </a>
+            </div>
+            <div id="theme-selector" class="col-3 d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-moon"></i>
+              <h3 id="theme--dark-text">Dark mode</h3>
+              <h3 id="theme--light-text" class="d-none">Light mode</h3>
             </div>
           </div>
         </div>
       </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2 col-6 py-4">
+            <a id="back-button" href="index.html" class="p-1">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back
+              </a>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-9 mb-4" id="country-flag-container">
+            <img id="country-flag" src="" alt="">
+          </div>
+          <div class="col-lg-7">
+            <div id="country-info" >
+              <div class="col-lg-8 col">
+                <h2 id="country-name" class="mb-4"></h2>
+                <ul>
+                  <li><h4>Official name: <span id="country-official-name"></span></h4></li>
+                  <li><h4>Capital: <span id="country-capital"></span></h4></li>
+                  <li><h4>Population: <span id="country-population"></span></h4></li>
+                  <li><h4>Languages: <span id="country-languages"></span></h4></li>
+                  <li><h4>Currency: <span id="country-currency"></span></h4></li>
+                  <li><h4>Web domain: <span id="country-web-domain"></span></h4></li>
+                  <li><h4>Calling code: <span id="country-calling-code"></span></h4></li>
+                  <li><h4>FIFA country code: <span id="country-fifa"></span></h4></li>
+                </ul>
+              </div>
+              <div class="col-lg-4">
+                <h2>Borders</h2>
+                <div >
+                  <ul id="country-borders">
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row" id="countries">
+          <!-- JS Script inserts HTML here -->
+        </div>
+      </div>
+      <script src="/scripts/country.js"></script>
+    </section>
+    <div class="footer" >
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <p id="my-name">By Borhan Boulandier</p>
+          <div>
+            <a href="https://github.com/BsBou" id="social"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/borhanbou/" id="social"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="row" id="countries">
-      <!-- JS Script inserts HTML here -->
-    </div>
-  </div>
-  <script src="/scripts/country.js"></script>
 </body>
 </html>
