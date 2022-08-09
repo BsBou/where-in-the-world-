@@ -29,7 +29,7 @@ function createCountryCard(obj) {
                 <div class="country-card-body">
                   <h2 id="name">${obj.name}</h2>
                   <h4>Population: <span id="population">${obj.population.toLocaleString('en-US')}</span></h4>
-                  <h4>Capital: <span id="capital">${obj.capital}</span></h4>
+                  <h4>Capital: <span id="capital">${obj.capital || 'No capital!'}</span></h4>
                   <h4>Region: <span id="continent">${obj.continent}</span></h4>
                 </div>
               </a>

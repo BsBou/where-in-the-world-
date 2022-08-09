@@ -40,7 +40,7 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}`)
 
     // Set country official name, capital and population
     document.getElementById('country-official-name').innerText = country.name.official
-    document.getElementById('country-capital').innerText = country.capital || 'No capital'
+    document.getElementById('country-capital').innerText = country.capital || 'No capital!'
     document.getElementById('country-population').innerText = country.population.toLocaleString('en-US')
 
     // Set country languages to be first three if present
