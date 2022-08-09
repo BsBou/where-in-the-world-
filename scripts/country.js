@@ -59,8 +59,12 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}`)
         document.getElementById('country-currency').innerText = 'No currency!'
       }
 
-    //Set web domain
-      document.getElementById('country-web-domain').innerText = country.tld[0] || 'No web domain!'
+    //Set web domain if present
+    if (country.tld) {
+      document.getElementById('country-web-domain').innerText = country.tld[0]
+    } else {
+      document.getElementById('country-web-domain').innerText = 'No web domain!'
+    }
 
     // Set country calling code if present
     if(Object.keys(country.idd).length > 0){
