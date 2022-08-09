@@ -24,7 +24,11 @@ html{
   font-size: 1.6rem;
   padding-left: 1rem;
 }
-
+#empty-col{
+  @media (max-width:576px) {
+    display: none;
+  }
+}
 
 a{
   all: unset;

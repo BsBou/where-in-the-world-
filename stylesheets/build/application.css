@@ -20,6 +20,12 @@ html {
   padding-left: 1rem;
 }
 
+@media (max-width: 576px) {
+  #empty-col {
+    display: none;
+  }
+}
+
 a {
   all: unset;
 }
