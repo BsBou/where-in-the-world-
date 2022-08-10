@@ -29,9 +29,11 @@
 
 <a href="https://where-in-the-world-bsbou.herokuapp.com/">where-in-the-world-bsbou.herokuapp.com/</a>
 
-A mobile first web app based on REST countires API, built using vanilla JavaScript, SCSS and HTML
+A mobile first web app based on REST countries API, built using vanilla JavaScript, SCSS and HTML
 
 <img src="https://user-images.githubusercontent.com/102613003/183885336-86215f33-c13d-4f58-8f5a-8a9de365a7ed.png" width='400'>
+
+This project was inspired by a Frontend Mentor challenge: <a href='https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca'>REST Countries API with color theme switcher</a>
 
 ## Features
 
