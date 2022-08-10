@@ -8,12 +8,12 @@
   </a>
 
   <h3 align="center">Discover the world, learn new facts about countries</h3>
-    <a href="https://where-in-the-world-bsbou.herokuapp.com/">
-    <h2Check it out!</h2>
-  </a>
+
+  
   <p align="center">
     <br />
     <a href="https://github.com/BsBou/where-in-the-world-"><strong>Explore the docs »</strong></a>
+    <a href="https://where-in-the-world-bsbou.herokuapp.com/"><h2>Check out the app!</h2></a>
     <br />
     <br />
     <a href="https://github.com/BsBou/where-in-the-world-/issues">Report Bug</a>
@@ -22,28 +22,12 @@
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About the project</a>
-      <ul>
-        <li><a href="#built-with">Tech stack</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#acknowledgments">Contact & Acknowledgments</a></li>
-  </ol>
-</details>
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
 #### Discover the world, learn new facts about countries
+
+<a href="https://where-in-the-world-bsbou.herokuapp.com/">where-in-the-world-bsbou.herokuapp.com/</a>
 
 A mobile first web app based on REST countires API, built using vanilla JavaScript, SCSS and HTML
 
@@ -73,8 +57,6 @@ Routes user to error page if URL path is not found
 
 <img src="https://user-images.githubusercontent.com/102613003/183895618-f9a5c978-7e30-443f-99d3-ea892b1f4654.png" width='400'>
 
-
-
 #### Deployed on Heroku
 Application deployed to Heroku as PHP app, using dummy PHP backend file and composer.json file.
 
@@ -82,7 +64,7 @@ Application deployed to Heroku as PHP app, using dummy PHP backend file and comp
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### Tech stack
+## Tech stack
 
 Mobile first web app.
 
