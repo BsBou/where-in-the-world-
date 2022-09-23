@@ -72,13 +72,18 @@ window.onload = (event) => {
   const form = document.querySelector('#search')
   form.addEventListener('input', event => {
     event.preventDefault()
+
     // Get user input, remove trailing whitespace except in country names with more than one word
     const value = event.target.value.replace(/\B\s+|\s+\B/, '')
     // Filter countries by name, case insensitive
-    const userSearch = countryList.filter(country => country.name.toLowerCase().includes(value.toLowerCase()))
+    let userSearch = countryList.filter(country => country.name.toLowerCase().includes(value.toLowerCase()))
+    // Filter by region if region selected
+    const selectRegion = document.querySelector('#select-region')
+    if (selectRegion.selectedIndex > 1 ) {
+      userSearch = userSearch.filter(country => country.continent === selectRegion.value)
+    }
     // Clear all countries from page
     countries.innerHTML = ''
-
     // Insert only filtered countries on page
     if(userSearch.length > 0){
       userSearch.forEach((country) => {
