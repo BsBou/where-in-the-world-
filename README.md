@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://where-in-the-world-bsbou.herokuapp.com/">
+  <a href="https://bsbou.github.io/where-in-the-world-/">
     <h2>Where in the world?</h2>
   </a>
 
@@ -13,7 +13,7 @@
   <p align="center">
     <br />
     <a href="https://github.com/BsBou/where-in-the-world-"><strong>Explore the docs »</strong></a>
-    <a href="https://where-in-the-world-bsbou.herokuapp.com/"><h2>Check out the app!</h2></a>
+    <a href="https://bsbou.github.io/where-in-the-world-/"><h2>Check out the app!</h2></a>
     <br />
     <br />
     <a href="https://github.com/BsBou/where-in-the-world-/issues">Report Bug</a>
@@ -27,7 +27,7 @@
 
 #### Discover the world, learn new facts about countries
 
-<a href="https://where-in-the-world-bsbou.herokuapp.com/">where-in-the-world-bsbou.herokuapp.com/</a>
+<a href="https://bsbou.github.io/where-in-the-world-/">https://bsbou.github.io/where-in-the-world-/</a>
 
 A mobile first web app based on REST countries API, built using vanilla JavaScript, SCSS and HTML
 
@@ -58,11 +58,6 @@ Allows navigation through clicking on bordering countries.
 Routes user to error page if URL path is not found
 
 <img src="https://user-images.githubusercontent.com/102613003/183895618-f9a5c978-7e30-443f-99d3-ea892b1f4654.png" width='400'>
-
-#### Deployed on Heroku
-Application deployed to Heroku as PHP app, using dummy PHP backend file and composer.json file.
-
-<a href='https://www.geeksforgeeks.org/how-to-deploy-a-basic-static-html-website-to-heroku/'>How to deploy a basic static HTML website to Heroku</a>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
